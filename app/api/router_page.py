@@ -13,7 +13,7 @@ def home_page(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 @router.post("/join_chat", response_class=HTMLResponse)
-async def join_chat(request: Request, username: str = Form(...), room_id: int = Form(...)):
+def join_chat(request: Request, username: str = Form(...), room_id: int = Form(...)):
     
     user_id = random.randint(100, 100000)
     return templates.TemplateResponse("index.html",

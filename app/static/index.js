@@ -3,8 +3,19 @@ const roomId = roomData.getAttribute("data-room-id");
 const username = roomData.getAttribute("data-username");
 const userId = roomData.getAttribute("data-user-id");
 
-const ws = new WebSocket(`ws://localhost:8000/ws/chat/${roomId}/${userId}?username=${username}`);
+// 1. Определяем протокол: 'wss:' (для https) или 'ws:' (для http)
+const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 
+// 2. Определяем хост (это будет ваш URL от tuna, например "xxxx.tuna.fun")
+const host = window.location.host;
+
+// 3. Собираем полный, корректный URL для WebSocket
+const wsUrl = `${protocol}//${host}/ws/chat/${roomId}/${userId}?username=${username}`;
+
+console.log(`Подключаемся к WebSocket по адресу: ${wsUrl}`);
+
+// 4. Создаем WebSocket с новым URL
+const ws = new WebSocket(wsUrl);
 
 ws.onopen = () => {
     console.log("Соединение установлено");

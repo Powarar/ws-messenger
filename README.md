@@ -7,7 +7,7 @@
   * **Бэкенд:** Python, FastAPI, Uvicorn
   * **Веб-сокеты:** FastAPI WebSockets
   * **Бот:** Aiogram 3.x
-  * **Туннелирование:** [Tuna](https://www.google.com/search?q=https://github.com/a-bali/tuna) (для предоставления `localhost` в интернет)
+  * **Туннелирование:** [Tuna](https://tuna.am/) (для предоставления `localhost` в интернет)
   * **Фронтенд:** HTML, Jinja2, JavaScript
 
 -----
@@ -35,6 +35,11 @@ venv\Scripts\activate     # (для Windows)
 ```
 
 Установите необходимые библиотеки:
+# Активация виртуального окружения
+# Для Windows:
+venv\Scripts\activate
+# Для Linux/Mac:
+source venv/bin/activate
 
 ```bash
 pip install fastapi uvicorn "aiogram>=3.0.0" python-dotenv jinja2
@@ -44,7 +49,7 @@ pip install fastapi uvicorn "aiogram>=3.0.0" python-dotenv jinja2
 
 Этот проект использует `tuna` для создания туннеля. Вам необходимо установить `tuna` в вашу систему и убедиться, что она доступна из командной строки.
 
-Следуйте [официальным инструкциям по установке Tuna](https://www.google.com/search?q=https://github.com/a-bali/tuna%3Ftab%3Dreadme-ov-file%23installation).
+Следуйте [официальным инструкциям по установке Tuna](https://tuna.am/).
 
 -----
 
